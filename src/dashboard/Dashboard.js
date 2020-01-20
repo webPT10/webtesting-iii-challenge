@@ -1,5 +1,4 @@
 import React from 'react';
-import { getByTestId } from '@testing-library/dom'
 
 import Display from '../display/Display';
 import Controls from '../controls/Controls';
@@ -16,7 +15,6 @@ class Dashboard extends React.Component {
     return (
       <>
         <Display 
-          data-testid="displayComponent"
           locked={locked} 
           closed={closed} 
         />

@@ -1,9 +1,14 @@
 // Test away
-import React from "react";
-import { render, getByTestId } from "@testing-library/react";
-import Dashboard from "../dashboard/Dashboard";
+import React from 'react'
+import {render, cleanup} from '@testing-library/react'
+// import 'jest-dom/extend-expect'
+import Dashboard from './Dashboard'
+afterEach(cleanup)
 
-it("renders correctly", () => {
-  const { getByTestId } = render(<Dashboard />);
-  const element = getByTestId("displayComponent");
-});
+describe('dashboard', () => {
+    //shows the controls and display
+    it('renders', () => {
+        const dashboard = render(<Dashboard />)
+        expect(dashboard.baseElement).toMatchSnapshot()
+    })
+})
